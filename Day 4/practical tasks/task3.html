@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-3</title>
+</head>
+
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form>
+
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input type="text" name="name" required minlength="3" placeholder="Enter full name">
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" required placeholder="example@gmail.com">
+        <br><br>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label>
+        <input type="text" name="phone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number">
+        <br><br>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" required>
+        <br><br>
+
+        <!-- Gender -->
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="male" required> Male
+        <input type="radio" name="gender" value="female" required> Female
+        <br><br>
+
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <textarea name="address" required placeholder="Enter address"></textarea>
+        <br><br>
+
+        <!-- Course Selection -->
+        <label>Select Course:</label>
+        <select name="course" required>
+            <option value="">-- Select --</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">B.Sc Computer Science</option>
+            <option value="ba">B.A English</option>
+            <option value="bcom">B.Com</option>
+        </select>
+        <br><br>
+
+        <!-- Submit -->
+        <button type="submit">Register</button>
+        <button type="reset">Clear</button>
+
+    </form>
+
+</body>
+
+</html>
