@@ -1,0 +1,26 @@
+4.Write down 2 benefits of using semantic tags
+
+    1.Improved accessibility – Screen readers and assistive technologies better understand the structure and purpose of content (e.g., <header>, <nav>, <main>), making websites more usable for people with disabilities.
+
+    2.Better SEO and machine readability – Search engines can more accurately interpret page structure and meaning, which can improve indexing and search ranking.
+
+5.Research: Compare semantic tags with <div> — when should each be used?
+
+    Semantic Tags:-
+            Semantic tags (e.g., <header>, <nav>, <main>, <article>, <footer>, <section>) describe the purpose and meaning of the content they wrap.
+
+            uses:-
+                SEO: Search engines use these tags to better understand and index your content, potentially leading to higher rankings.
+                Maintainability: Semantic tags make your code more readable and organized for other developers (and your future self).
+                Clarity: They provide inherent meaning, reducing the need for descriptive <div> elements and making it clear what each part of the page is for. 
+
+    <div> Yag:-
+            A <div> is a generic container that provides no meaning—it is used purely for grouping and layout.
+
+            uses:-
+                Grouping and structuring: It logically separates parts of a webpage, making the code easier to read and manage for developers. 
+                Styling with CSS: It allows developers to apply styles like colors, padding, and margins to a group of elements at once by targeting the <div> with a class or ID. 
+                Layout: It is used to create layout structures, such as side-by-side columns using CSS Grid
+
+
+
