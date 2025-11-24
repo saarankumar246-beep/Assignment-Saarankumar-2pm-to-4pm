@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Table</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  .pricing-table {
+    display: flex;
+    gap: 20px; /* space between plans */
+  }
+
+  .plan {
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .basic {
+    border: 3px solid #3498db; /* solid border */
+  }
+
+  .standard {
+    border: 3px dashed #e74c3c; /* dashed border */
+  }
+
+  .premium {
+    border: 4px double #2ecc71; /* double border */
+  }
+
+  .plan h2 {
+    margin-bottom: 10px;
+  }
+
+  .plan p {
+    margin: 5px 0;
+  }
+
+  .plan .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+
+  .plan button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .plan button:hover {
+    background-color: #2980b9;
+  }
+</style>
+</head>
+<body>
+
+<div class="pricing-table">
+  <div class="plan basic">
+    <h2>Basic</h2>
+    <p>5 Projects</p>
+    <p>10 GB Storage</p>
+    <div class="price">$10/mo</div>
+    <button>Select</button>
+  </div>
+
+  <div class="plan standard">
+    <h2>Standard</h2>
+    <p>15 Projects</p>
+    <p>50 GB Storage</p>
+    <div class="price">$25/mo</div>
+    <button>Select</button>
+  </div>
+
+  <div class="plan premium">
+    <h2>Premium</h2>
+    <p>Unlimited Projects</p>
+    <p>200 GB Storage</p>
+    <div class="price">$50/mo</div>
+    <button>Select</button>
+  </div>
+</div>
+
+</body>
+</html>

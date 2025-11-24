@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute Selectors with Submit Button</title>
+
+    <style>
+        /* Style all text input fields */
+        input[type="text"] {
+            border: 2px solid #4caf50;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #eaffea;
+        }
+
+        /* Style all password input fields */
+        input[type="password"] {
+            border: 2px solid #ff9800;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #fff3e0;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Hover effect for the button */
+        input[type="submit"]:hover {
+            background-color: #005f8a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <h2>Login Form</h2>
+
+        <label>Username:</label>
+        <input type="text" placeholder="Enter username"><br><br>
+
+        <label>Password:</label>
+        <input type="password" placeholder="Enter password"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+
+</body>
+
+</html>

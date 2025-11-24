@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification Banner</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 50px;
+  }
+
+  .notification {
+    background-color: #ffeb3b; /* bright yellow */
+    color: #333;
+    padding: 15px 25px; /* space inside the banner */
+    margin-bottom: 20px; /* space from other elements */
+    border-left: 6px solid #fbc02d; /* decorative border */
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .notification.success {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+    border-left-color: #388e3c;
+  }
+
+  .notification.error {
+    background-color: #ffcdd2;
+    color: #c62828;
+    border-left-color: #b71c1c;
+  }
+</style>
+</head>
+<body>
+
+<div class="notification">
+  This is a general notification banner with proper padding.
+</div>
+
+<div class="notification success">
+  Success! Your action was completed successfully.
+</div>
+
+<div class="notification error">
+  Error! Something went wrong. Please try again.
+</div>
+
+</body>
+</html>

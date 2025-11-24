@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uniform Box Layout</title>
+<style>
+  /* Apply border-box globally */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* space between boxes */
+    justify-content: center;
+  }
+
+  .box {
+    width: 200px;            /* includes padding & border because of border-box */
+    padding: 20px;           /* inner spacing */
+    border: 3px solid #3498db;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .box h3 {
+    margin: 0 0 10px 0;
+  }
+
+  .box p {
+    margin: 0;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<h1>Clean Box Layout with Border-Box</h1>
+
+<div class="container">
+  <div class="box">
+    <h3>Box 1</h3>
+    <p>This box uses border-box sizing.</p>
+  </div>
+
+  <div class="box">
+    <h3>Box 2</h3>
+    <p>Uniform sizing makes layout easier.</p>
+  </div>
+
+  <div class="box">
+    <h3>Box 3</h3>
+    <p>Padding and border don’t break the layout.</p>
+  </div>
+
+  <div class="box">
+    <h3>Box 4</h3>
+    <p>All boxes are consistent in size.</p>
+  </div>
+</div>
+
+</body>
+</html>
