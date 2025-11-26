@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>task-5</title>
+    <style>
+        .container {
+            display: flex;
+            width: 500px;
+            border: 2px solid #333;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        .fixed-width {
+            width: 150px;
+            background: #eee;
+            padding: 10px;
+        }
+
+        .flex-text {
+            background: #d9eaff;
+            padding: 10px;
+            min-width: 0;        /* ⭐ The fix: allow text to wrap */
+        }
+
+        .flex-text p {
+            white-space: nowrap; /* Remove for normal wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="fixed-width">Sidebar</div>
+
+        <div class="flex-text">
+            <p>
+                This is a very long line of text that would normally overflow the flex item,
+                but min-width: 0 prevents that and allows proper shrinking or ellipsis.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

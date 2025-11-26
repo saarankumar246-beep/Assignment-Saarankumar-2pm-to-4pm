@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>task-3</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+
+        /* Chat container fills available vertical space */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column-reverse; /* ⭐ stack messages bottom → top */
+            overflow-y: auto;               /* Enable scrolling */
+            padding: 20px;
+            background: #f2f2f2;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .input-bar {
+            display: flex;
+            padding: 12px;
+            border-top: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .input-bar input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .input-bar button {
+            margin-left: 10px;
+            padding: 10px 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input-bar button:hover {
+            background: #3a78c2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scrollable message column -->
+    <div class="chat-container">
+        <div class="message">Older message</div>
+        <div class="message">Another message</div>
+        <div class="message">Hello! This is the newest message.</div>
+    </div>
+
+    <!-- Input stays at bottom -->
+    <div class="input-bar">
+        <input type="text" placeholder="Type a message…">
+        <button>Send</button>
+    </div>
+
+</body>
+</html>

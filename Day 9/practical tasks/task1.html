@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>task-1</title>
+    <style>
+        .pricing-container {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .pricing-card {
+            flex: 1;
+            background: #f7f7f7;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing-card h2 {
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #4a90e2;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        /* ⭐ Responsive: stack into 1 column */
+        @media (max-width: 700px) {
+            .pricing-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pricing-container">
+
+        <div class="pricing-card">
+            <h2>Basic</h2>
+            <p class="price">$9/mo</p>
+            <p>Essential features for individuals.</p>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Standard</h2>
+            <p class="price">$19/mo</p>
+            <p>Great for small teams and freelancers.</p>
+            <a href="#" class="cta-btn">Choose Plan</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Premium</h2>
+            <p class="price">$29/mo</p>
+            <p>Advanced features for professionals.</p>
+            <a href="#" class="cta-btn">Join Now</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

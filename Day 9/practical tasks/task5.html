@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>task-5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f5f5f5;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-auto-flow: column;      /* Place items in a horizontal strip */
+            grid-auto-columns: minmax(150px, 1fr);  /* Each image gets at least 150px */
+            align-items: center;         /* Vertically center images */
+            gap: 15px;
+            padding: 20px;
+            overflow-x: auto;            /* Horizontal scroll if necessary */
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;           /* Maintain aspect ratio */
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Responsive: smaller height on small screens */
+        @media (max-width: 600px) {
+            .photo-grid img {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="photo-grid">
+        <img src="https://picsum.photos/300/200?random=1" alt="Photo 1">
+        <img src="https://picsum.photos/300/200?random=2" alt="Photo 2">
+        <img src="https://picsum.photos/300/200?random=3" alt="Photo 3">
+        <img src="https://picsum.photos/300/200?random=4" alt="Photo 4">
+        <img src="https://picsum.photos/300/200?random=5" alt="Photo 5">
+    </div>
+
+</body>
+</html>

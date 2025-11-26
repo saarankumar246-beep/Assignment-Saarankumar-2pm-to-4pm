@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .icon-container {
+            position: relative; /* Makes the badge position relative to this container */
+            display: inline-block;
+        }
+
+        .icon-container img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .badge {
+            position: absolute;    /* Position relative to parent */
+            top: -10px;            /* Move above the top */
+            right: -10px;          /* Move to the right */
+            background-color: red;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h2>Notification Badge</h2>
+    <div class="icon-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827504.png" alt="Notifications">
+        <div class="badge">5</div>
+    </div>
+
+</body>
+</html>

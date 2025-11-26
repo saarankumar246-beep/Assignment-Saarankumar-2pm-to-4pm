@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 200vh; /* Just to allow scrolling for demonstration */
+        }
+
+        .fixed-button {
+            position: fixed;       /* Fixes element relative to viewport */
+            bottom: 20px;          /* 20px from the bottom */
+            right: 20px;           /* 20px from the right */
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .fixed-button:hover {
+            background-color: #e64a19;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <p>Scroll down to see the fixed button stay at the bottom-right corner of the page.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. <!-- repeated content to allow scrolling --> </p>
+    <p>More content...</p>
+
+    <!-- Fixed element -->
+    <button class="fixed-button">Contact Us</button>
+</body>
+</html>

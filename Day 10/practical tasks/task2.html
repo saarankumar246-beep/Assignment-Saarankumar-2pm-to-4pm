@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sticky navbar */
+        nav {
+            position: sticky;        /* Makes navbar stick to top */
+            top: 0;                  /* Stick at top */
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;           /* Ensures it stays above other content */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+        }
+
+        /* Dummy content to enable scrolling */
+        section {
+            padding: 50px 20px;
+            height: 100vh;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MySite</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h1>Home</h1>
+        <p>Welcome to the homepage! Scroll down to see the sticky navbar in action.</p>
+    </section>
+
+    <section id="about">
+        <h1>About</h1>
+        <p>Information about us goes here.</p>
+    </section>
+
+    <section id="services">
+        <h1>Services</h1>
+        <p>Details of services offered.</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Contact information and form.</p>
+    </section>
+</body>
+</html>
