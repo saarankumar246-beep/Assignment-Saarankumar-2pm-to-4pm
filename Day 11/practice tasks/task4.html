@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Item Align-Self Example</title>
+
+    <style>
+        .flex-container {
+            display: flex;
+            height: 200px;
+            background: #f3f3f3;
+            padding: 20px;
+            align-items: center; /* default alignment for items */
+            gap: 20px;
+        }
+
+        .item {
+            background: #4a90e2;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+
+        /* Give one item its own alignment */
+        .special {
+            align-self: flex-end; /* overrides the container’s align-items */
+            background: #e24a4a;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Using align-self on a Single Flex Item</h2>
+
+    <div class="flex-container">
+        <div class="item">Item 1</div>
+        <div class="item special">Item 2 (aligned flex-end)</div>
+        <div class="item">Item 3</div>
+    </div>
+
+</body>
+</html>

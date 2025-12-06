@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saaran Kumar | Portfolio</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #fafafa;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* Header, main, footer */
+            min-height: 100vh;
+        }
+
+        main {
+            display: grid;
+            grid-template-areas:
+                "home"
+                "about"
+                "projects"
+                "media"
+                "pricing"
+                "features"
+                "contact";
+            gap: 20px;
+            padding: 20px;
+        }
+
+        section,
+        header,
+        article {
+            padding: 20px;
+            background: white;
+            margin: 0;
+            /* remove extra margin for grid spacing */
+            border-radius: 8px;
+            transition: transform .3s, box-shadow .3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        section:hover,
+        article:hover,
+        header:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* -----------------------------
+        STICKY NAVIGATION (FLEXBOX)
+------------------------------*/
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 15px;
+            background: #222;
+            justify-content: center;
+            /* Center nav items */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color .3s, text-shadow .3s;
+        }
+
+        nav ul li a:hover {
+            color: #00e0ff;
+            text-shadow: 0 0 6px #00e0ff;
+        }
+
+        /* -----------------------------
+     HERO SECTION WITH FLEXBOX
+------------------------------*/
+        header#home {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #00b4ff, #7f00ff);
+            color: white;
+            padding: 40px;
+            grid-area: home;
+        }
+
+        header#home .content {
+            flex: 1 1 400px;
+            /* Flexible width */
+        }
+
+        header#home .media {
+            flex: 0 0 420px;
+        }
+
+        /* -----------------------------
+    PROJECT SECTION WITH GRID
+------------------------------*/
+        #projects {
+            background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            grid-area: projects;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        #projects article {
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 10px;
+            color: white;
+        }
+
+        /* -----------------------------
+        MEDIA SECTION FLEX
+------------------------------*/
+        #media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            grid-area: media;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* -----------------------------
+    FORM INTERACTIVE STYLES
+------------------------------*/
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+        }
+
+        input,
+        textarea {
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            transition: box-shadow .3s, border-color .3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #00bfff;
+            box-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            background: #008cff;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform .3s, background .3s;
+        }
+
+        button:hover {
+            background: #005bb5;
+            transform: scale(1.05);
+        }
+
+        /* -----------------------------
+    RESPONSIVE FLEX ADJUSTMENTS
+------------------------------*/
+        @media (max-width: 768px) {
+            header#home {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header#home .media {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HOME / HERO SECTION -->
+        <header id="home" class="hero">
+            <div class="content">
+                <h1>Hi, I'm <strong>Saaran Kumar</strong></h1>
+                <h2>Web Developer</h2>
+                <p>
+                    Creating <strong>accessible</strong> and <strong>high-performance</strong> digital experiences.<br>
+                    Turning ideas into <em>clean, scalable</em> code.
+                </p>
+            </div>
+
+            <!-- Video Introduction -->
+            <div class="media">
+                <h3>Video Introduction</h3>
+                <video width="420" controls>
+                    <source src="intro.mp4" type="video/mp4">
+                </video>
+            </div>
+        </header>
+
+        <hr>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I’m a front-end developer focused on intuitive interfaces.</p>
+            <p>I prioritize <strong>accessibility</strong> and user-centered design.</p>
+
+            <section>
+                <h3>Technical Terms</h3>
+                <dl>
+                    <dt>Accessibility</dt>
+                    <dd>Ensuring websites work for everyone.</dd>
+                    <dt>Responsive Design</dt>
+                    <dd>Layouts that adjust for all screen sizes.</dd>
+                    <dt>Semantic HTML</dt>
+                    <dd>Using meaningful tags for structure and accessibility.</dd>
+                </dl>
+            </section>
+        </section>
+
+        <hr>
+
+        <!-- PROJECTS SECTION WITH BACKGROUND IMAGE -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <article>
+                <h3>Portfolio Website</h3>
+                <p>
+                    A custom-built site using modern responsive layouts, Flexbox, and
+                    accessibility best practices.
+                </p>
+            </article>
+        </section>
+
+        <hr>
+
+        <!-- MEDIA SECTION -->
+        <section id="media">
+            <h2>Media</h2>
+
+            <article>
+                <h3>Project Walkthrough Video</h3>
+                <video controls>
+                    <source src="project-demo.mp4" type="video/mp4">
+                </video>
+            </article>
+
+            <article>
+                <h3>Audio Introduction</h3>
+                <audio controls>
+                    <source src="audio-intro.mp3" type="audio/mp3">
+                </audio>
+            </article>
+
+            <article>
+                <h3>Embedded YouTube Profile</h3>
+                <iframe  src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video"
+                    allowfullscreen>
+                </iframe>
+            </article>
+
+            <article>
+                <h3>Google Map - My Location</h3>
+                <iframe width="460" height="260" style="border:0" loading="lazy" allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.692759963287!2d80.217!3d13.069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266df2dc6e275%3A0x6f5d9f8b8a0!2sChoolaimedu%20High%20Road%2C%20Chennai!5e0!3m2!1sen!2sin!4v1234567890"></iframe>
+                </iframe>
+            </article>
+        </section>
+
+        <hr>
+
+        <!-- PRICING SECTION -->
+        <section id="pricing">
+            <h2>Pricing</h2>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>Service</th>
+                    <th>Details</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Basic Website</td>
+                    <td>Single-page static website</td>
+                    <td>₹3000</td>
+                </tr>
+                <tr>
+                    <td>Portfolio Website</td>
+                    <td>Multi-section portfolio</td>
+                    <td>₹5000</td>
+                </tr>
+                <tr>
+                    <td>Full Website</td>
+                    <td>Up to 5 pages</td>
+                    <td>₹10,000</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- FEATURES SECTION -->
+        <section id="features">
+            <h2>Website Features</h2>
+
+            <ul>
+                <li>Performance
+                    <ul>
+                        <li>Fast loading</li>
+                        <li>Optimized images</li>
+                    </ul>
+                </li>
+                <li>Accessibility
+                    <ul>
+                        <li>Keyboard navigation</li>
+                        <li>Semantic HTML</li>
+                    </ul>
+                </li>
+                <li>Design
+                    <ul>
+                        <li>Responsive layout</li>
+                        <li>Clean typography</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                Email: <strong>saarankumar246@gmail.com</strong><br>
+                Mobile: <strong>9087654321</strong>
+            </p>
+
+            <h3>Address</h3>
+            <address>
+                Periyar Pathai<br>
+                Choolaimedu<br>
+                Chennai - 600094
+            </address>
+
+            <h3>Send Me a Message</h3>
+            <form>
+                <label>Name:</label>
+                <input type="text">
+
+                <label>Email:</label>
+                <input type="email">
+
+                <label>Message:</label>
+                <textarea rows="5"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><em>&copy; 2025 Saaran Kumar. All rights reserved.</em></p>
+    </footer>
+
+</body>
+
+</html>

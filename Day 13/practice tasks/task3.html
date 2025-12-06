@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2-Column Grid with Spanning Item</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f0f0f0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* two equal columns */
+        gap: 20px; /* 20px gap between items */
+    }
+
+    .grid-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Make the first item span both columns */
+    .grid-item.span-2 {
+        grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: 1fr; /* single column on mobile */
+        }
+        .grid-item.span-2 {
+            grid-column: span 1; /* span single column on small screens */
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>2-Column Grid with One Item Spanning 2 Columns</h1>
+
+<div class="grid-container">
+    <div class="grid-item span-2">This item spans 2 columns</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+</div>
+
+</body>
+</html>

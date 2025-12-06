@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Layout</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    display: grid;
+    grid-template-areas:
+      "sidebar topbar"
+      "sidebar stats"
+      "sidebar main";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 60px 120px 1fr;
+    height: 100vh;
+  }
+
+  /* -----------------------------
+     SIDEBAR
+  -----------------------------*/
+  .sidebar {
+    grid-area: sidebar;
+    background: #2f3e46;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .sidebar a:hover {
+    color: #00b4ff;
+  }
+
+  /* -----------------------------
+     TOPBAR
+  -----------------------------*/
+  .topbar {
+    grid-area: topbar;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .topbar h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .topbar .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* -----------------------------
+     STATS
+  -----------------------------*/
+  .stats {
+    grid-area: stats;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0077cc;
+  }
+
+  /* -----------------------------
+     MAIN CONTENT
+  -----------------------------*/
+  .main {
+    grid-area: main;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .main h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .main-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  }
+
+  /* -----------------------------
+     RESPONSIVE
+  -----------------------------*/
+  @media (max-width: 768px) {
+    body {
+      grid-template-areas:
+        "topbar"
+        "stats"
+        "main"
+        "sidebar";
+      grid-template-columns: 1fr;
+      grid-template-rows: 60px auto 1fr auto;
+    }
+
+    .sidebar {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px;
+    }
+
+    .stats {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="#">Home</a>
+    <a href="#">Analytics</a>
+    <a href="#">Sales</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <h1>Dashboard</h1>
+    <div class="user">
+      <span>👤 Saaran</span>
+    </div>
+  </div>
+
+  <!-- Stats Area -->
+  <div class="stats">
+    <div class="card">
+      <h3>Total Users</h3>
+      <p>1,245</p>
+    </div>
+    <div class="card">
+      <h3>Sales</h3>
+      <p>$12,340</p>
+    </div>
+    <div class="card">
+      <h3>Visits</h3>
+      <p>23,450</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h2>Recent Activity</h2>
+    <div class="main-content">
+      <div class="main-card">
+        <h3>Order #1024</h3>
+        <p>Completed</p>
+      </div>
+      <div class="main-card">
+        <h3>Order #1025</h3>
+        <p>Pending</p>
+      </div>
+      <div class="main-card">
+        <h3>Order #1026</h3>
+        <p>Shipped</p>
+      </div>
+      <div class="main-card">
+        <h3>Order #1027</h3>
+        <p>Cancelled</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

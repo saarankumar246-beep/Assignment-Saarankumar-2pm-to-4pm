@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block and Inline Elements</title>
+
+    <style>
+        /* Block element spanning full width */
+        .full-width-block {
+            width: 100%;
+            background-color: #4daaf0;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: block;  
+        }
+
+        /* Inline element beside text */
+        .inline-element {
+            display: inline;
+            background-color: #f0c14d;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Full-width block element -->
+    <div class="full-width-block">
+        This is a full-width block element.
+    </div>
+
+    <p>
+        Here is some text, and 
+        <span class="inline-element">this is an inline element</span>
+        appearing beside it.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Grid Portfolio & Dashboard Example</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ----------------- BASE STYLES ----------------- */
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f9f9f9;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+main {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ----------------- GRID LAYOUT ----------------- */
+header, section, footer {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+header:hover, section:hover, footer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+/* ----------------- NAVIGATION ----------------- */
+nav {
+    background: #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav ul li a:hover { color: #00e0ff; }
+
+/* ----------------- HERO SECTION (GRID) ----------------- */
+header#home {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 2rem;
+    align-items: center;
+    background: linear-gradient(135deg, #00b4ff, #7f00ff);
+    color: white;
+    border-radius: 10px;
+}
+header#home .content { display: flex; flex-direction: column; gap: 10px; }
+header#home .media video { width: 100%; border-radius: 8px; }
+
+
+
+/* ----------------- PROJECTS / GALLERY (GRID) ----------------- */
+section#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+#projects article {
+    background: rgba(0,0,0,0.45);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ----------------- MEDIA SECTION (GRID) ----------------- */
+section#media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 20px;
+}
+#media article { display: flex; flex-direction: column; gap: 10px; }
+#media video,#media audio,#media iframe { width: 100%; border-radius: 8px; }
+
+/* ----------------- PRICING TABLE ----------------- */
+section#pricing table {
+    width: 100%;
+    border-collapse: collapse;
+}
+section#pricing th, section#pricing td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+section#pricing th { background: #f0f0f0; }
+
+/* ----------------- FEATURES ----------------- */
+section#features ul ul { margin-left: 20px; }
+
+/* ----------------- CONTACT FORM ----------------- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+input, textarea {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    transition: box-shadow .3s, border-color .3s;
+}
+input:focus, textarea:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 8px rgba(0,191,255,0.5);
+    outline: none;
+}
+button {
+    padding: 10px;
+    background: #008cff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform .3s, background .3s;
+}
+button:hover { background:#005bb5; transform: scale(1.05); }
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+    header#home { grid-template-columns: 1fr; text-align: center; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <!-- HERO -->
+    <header id="home">
+        <div class="content">
+            <h1>Hi, I'm <strong>Saaran Kumar</strong></h1>
+            <h2>Web Developer</h2>
+            <p>Creating <strong>accessible</strong> and <strong>high-performance</strong> digital experiences. Turning ideas into <em>clean, scalable</em> code.</p>
+        </div>
+        <div class="media">
+            <h3>Video Introduction</h3>
+            <video controls>
+                <source src="intro.mp4" type="video/mp4">
+            </video>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I’m a front-end developer focused on intuitive interfaces.</p>
+        <p>I prioritize <strong>accessibility</strong> and user-centered design.</p>
+    </section>
+
+    <!-- PROJECTS / GALLERY -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <article>
+            <h3>Portfolio Website</h3>
+            <p>Custom-built responsive site with accessibility best practices.</p>
+        </article>
+        <article>
+            <h3>E-commerce App</h3>
+            <p>Interactive online shop with secure checkout flow.</p>
+        </article>
+        <article>
+            <h3>Dashboard UI</h3>
+            <p>Analytics dashboard using Grid layouts for responsive charts.</p>
+        </article>
+    </section>
+
+    <!-- MEDIA -->
+    <section id="media">
+        <h2>Media</h2>
+        <article>
+            <h3>Project Walkthrough Video</h3>
+            <video controls>
+                <source src="project-demo.mp4" type="video/mp4">
+            </video>
+        </article>
+        <article>
+            <h3>Audio Introduction</h3>
+            <audio controls>
+                <source src="audio-intro.mp3" type="audio/mp3">
+            </audio>
+        </article>
+        <article>
+            <h3>Embedded YouTube</h3>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="YouTube video"></iframe>
+        </article>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Details</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Basic Website</td>
+                <td>Single-page static website</td>
+                <td>₹3000</td>
+            </tr>
+            <tr>
+                <td>Portfolio Website</td>
+                <td>Multi-section portfolio</td>
+                <td>₹5000</td>
+            </tr>
+            <tr>
+                <td>Full Website</td>
+                <td>Up to 5 pages</td>
+                <td>₹10,000</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+        <h2>Website Features</h2>
+        <ul>
+            <li>Performance
+                <ul>
+                    <li>Fast loading</li>
+                    <li>Optimized images</li>
+                </ul>
+            </li>
+            <li>Accessibility
+                <ul>
+                    <li>Keyboard navigation</li>
+                    <li>Semantic HTML</li>
+                </ul>
+            </li>
+            <li>Design
+                <ul>
+                    <li>Responsive layout</li>
+                    <li>Clean typography</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <strong>saarankumar246@gmail.com</strong><br>Mobile: <strong>9087654321</strong></p>
+        <form>
+            <label>Name:</label>
+            <input type="text">
+            <label>Email:</label>
+            <input type="email">
+            <label>Message:</label>
+            <textarea rows="5"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p><em>&copy; 2025 Saaran Kumar. All rights reserved.</em></p>
+</footer>
+
+</body>
+</html

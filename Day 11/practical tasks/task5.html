@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Grid Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .layout {
+            display: grid;
+            height: 100vh;
+
+            /* Define layout areas */
+            grid-template-areas:
+                "header  header"
+                "sidebar content"
+                "footer  footer";
+
+            grid-template-columns: 250px 1fr;  /* sidebar, main content */
+            grid-template-rows: 70px 1fr 60px; /* header, body, footer */
+        }
+
+        header {
+            grid-area: header;
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background: #eeeeee;
+            padding: 20px;
+        }
+
+        main {
+            grid-area: content;
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        footer {
+            grid-area: footer;
+            background: #333;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        /* Optional: make it responsive */
+        @media (max-width: 700px) {
+            .layout {
+                grid-template-areas:
+                    "header"
+                    "content"
+                    "sidebar"
+                    "footer";
+
+                grid-template-columns: 1fr;
+                grid-template-rows: 70px auto auto 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+
+        <header>Header</header>
+
+        <aside>Sidebar<br>Navigation<br>Links</aside>
+
+        <main>
+            <h2>Main Content</h2>
+            <p>
+                This is a full-page layout created with grid-template-areas. 
+                It’s clean, structured, and responsive.
+            </p>
+        </main>
+
+        <footer>Footer © 2025</footer>
+
+    </div>
+
+</body>
+</html>

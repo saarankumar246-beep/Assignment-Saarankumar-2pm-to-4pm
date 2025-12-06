@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-Column Grid Example</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* first column 1fr, second 2fr */
+            gap: 20px;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        .box {
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSS Grid: 1fr 2fr Layout</h2>
+
+    <div class="grid-container">
+        <div class="box">Column 1 (1fr)</div>
+        <div class="box">Column 2 (2fr)</div>
+    </div>
+
+</body>
+</html>

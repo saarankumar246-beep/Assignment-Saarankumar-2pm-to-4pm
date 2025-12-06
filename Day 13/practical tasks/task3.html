@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Grid</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px; /* equal spacing between items */
+    }
+
+    .product {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .product-content {
+        padding: 15px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-content h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+    }
+
+    .product-content p {
+        margin: 0 0 15px 0;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .product-content button {
+        padding: 10px;
+        border: none;
+        background: #0077cc;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .product-content button:hover {
+        background: #005fa3;
+    }
+</style>
+</head>
+<body>
+
+<h1>Product Grid</h1>
+
+<div class="product-grid">
+    <div class="product">
+        <img src="https://picsum.photos/300/200?random=1" alt="Product 1">
+        <div class="product-content">
+            <h3>Product 1</h3>
+            <p>High-quality product description goes here.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/300/200?random=2" alt="Product 2">
+        <div class="product-content">
+            <h3>Product 2</h3>
+            <p>High-quality product description goes here.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/300/200?random=3" alt="Product 3">
+        <div class="product-content">
+            <h3>Product 3</h3>
+            <p>High-quality product description goes here.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/300/200?random=4" alt="Product 4">
+        <div class="product-content">
+            <h3>Product 4</h3>
+            <p>High-quality product description goes here.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/300/200?random=5" alt="Product 5">
+        <div class="product-content">
+            <h3>Product 5</h3>
+            <p>High-quality product description goes here.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

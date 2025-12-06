@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page Layout</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas: 
+            "header header"
+            "left right"
+            "footer footer";
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+        gap: 20px;
+    }
+
+    header {
+        grid-area: header;
+        background: #0077cc;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .left {
+        grid-area: left;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+
+    .right {
+        grid-area: right;
+        background: #e2e2e2;
+        padding: 20px;
+    }
+
+    footer {
+        grid-area: footer;
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Responsive: stack columns on small screens */
+    @media (max-width: 768px) {
+        .container {
+            grid-template-areas:
+                "header"
+                "left"
+                "right"
+                "footer";
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>My Landing Page</h1>
+        <p>Header / Navigation Area</p>
+    </header>
+
+    <div class="left">
+        <h2>Left Content</h2>
+        <p>This section can contain text, images, or a call-to-action.</p>
+    </div>
+
+    <div class="right">
+        <h2>Right Content</h2>
+        <p>This section can contain features, testimonials, or additional media.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>

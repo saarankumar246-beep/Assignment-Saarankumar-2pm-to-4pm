@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Navigation Bar</title>
+  <style>
+    .nav-bar {
+      height: 60px;
+      background-color: #333;
+      display: flex;
+      justify-content: center;   /* Center items horizontally */
+      align-items: center;       /* Center items vertically */
+    }
+
+    .nav-bar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;                 /* Space between items */
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    .nav-bar a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>

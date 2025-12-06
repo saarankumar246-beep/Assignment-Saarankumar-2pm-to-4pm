@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 Equal Columns</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f0f0f0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+        gap: 20px; /* spacing between columns */
+    }
+
+    .grid-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: 1fr 1fr; /* 2 columns on smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .grid-container {
+            grid-template-columns: 1fr; /* 1 column on mobile */
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>4 Equal Columns using repeat(4, 1fr)</h1>
+
+<div class="grid-container">
+    <div class="grid-item">Column 1</div>
+    <div class="grid-item">Column 2</div>
+    <div class="grid-item">Column 3</div>
+    <div class="grid-item">Column 4</div>
+</div>
+
+</body>
+</html>

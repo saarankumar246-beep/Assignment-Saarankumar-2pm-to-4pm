@@ -1,0 +1,54 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photo Strip</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #eee;
+  }
+
+  .photo-strip {
+    display: flex;
+    align-items: center;          /* Vertically center images */
+    gap: 12px;
+    padding: 16px;
+    overflow-x: auto;             /* Allow horizontal scroll on small screens */
+    background: #fff;
+  }
+
+  .photo-strip img {
+    height: 140px;                /* Fixed row height (adjust as needed) */
+    width: auto;                  /* Preserve aspect ratio */
+    object-fit: cover;            /* Ensure good cropping if width limits apply */
+    object-position: center;      /* Center the cropping */
+    border-radius: 8px;
+  }
+
+  /* Optional: wrap images on wider screens */
+  @media (min-width: 700px) {
+    .photo-strip {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .photo-strip img {
+      height: 160px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="photo-strip">
+  <img src="https://picsum.photos/id/1015/600/400" alt="">
+  <img src="https://picsum.photos/id/1035/600/400" alt="">
+  <img src="https://picsum.photos/id/1041/600/400" alt="">
+  <img src="https://picsum.photos/id/1060/600/400" alt="">
+  <img src="https://picsum.photos/id/1084/600/400" alt="">
+</div>
+
+</body>
+</html>

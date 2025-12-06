@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3-Item Card Row</title>
+  <style>
+    .card-row {
+      display: flex;
+      gap: 20px;              /* 20px space between cards */
+      padding: 20px;
+    }
+
+    .card {
+      flex: 1;                /* Make all cards equal width */
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-row">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>This is the first card.</p>
+    </div>
+
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>This is the second card.</p>
+    </div>
+
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>This is the third card.</p>
+    </div>
+  </div>
+
+</body>
+</html>

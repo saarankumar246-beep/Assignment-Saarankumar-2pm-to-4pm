@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Toolbar</title>
+  <style>
+    .toolbar {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      background: #333;
+      padding: 0 20px;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Use flex: 1 to create three flexible regions */
+    .left,
+    .center,
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .center {
+      justify-content: center;   /* Center content */
+    }
+
+    .right {
+      justify-content: flex-end; /* Push content to the right */
+    }
+
+    .toolbar button {
+      padding: 8px 16px;
+      border: none;
+      background: #555;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .toolbar button:hover {
+      background: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <div class="left">
+      <button>Left</button>
+    </div>
+
+    <div class="center">
+      <button>Center</button>
+    </div>
+
+    <div class="right">
+      <button>Right</button>
+    </div>
+  </div>
+
+</body>
+</html>
