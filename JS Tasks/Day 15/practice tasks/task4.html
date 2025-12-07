@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image</title>
+<style>
+  img {
+    width: 400px; /* default size for larger screens */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+
+  /* Full width on small screens */
+  @media (max-width: 600px) {
+    img {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<img src="https://picsum.photos/600/400" alt="Sample Image">
+
+</body>
+</html>

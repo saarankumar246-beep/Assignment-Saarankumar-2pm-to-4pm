@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Hero Section</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url("https://picsum.photos/1920/1080?blur=3") center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero a {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        .hero a:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Make responsive at 600px */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero a {
+                font-size: 16px;
+                padding: 12px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Website</h1>
+            <p>Beautiful, clean, and fully responsive hero section using HTML & CSS.</p>
+            <a href="#">Get Started</a>
+        </div>
+    </section>
+
+</body>
+</html>

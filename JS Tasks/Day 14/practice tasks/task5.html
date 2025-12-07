@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Image</title>
+
+    <style>
+        /* Default image size on larger screens */
+        img {
+            width: 300px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        /* Full width on small mobile screens */
+        @media (max-width: 600px) {
+            img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Picsum random image -->
+    <img src="https://picsum.photos/600/300" alt="Picsum Image">
+
+</body>
+</html>

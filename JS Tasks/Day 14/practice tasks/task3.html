@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2 to 1 Column Layout</title>
+
+    <style>
+        /* Container */
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Each column */
+        .column {
+            flex: 1;
+            padding: 20px;
+            background-color: lightgray;
+            border-radius: 8px;
+        }
+
+        /* Mobile: change from 2 columns → 1 column */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="column">Column 1</div>
+        <div class="column">Column 2</div>
+    </div>
+
+</body>
+</html>

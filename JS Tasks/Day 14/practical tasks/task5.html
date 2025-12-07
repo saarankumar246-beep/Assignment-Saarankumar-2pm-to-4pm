@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Product Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        /* Product Section */
+        .product-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .product-card p {
+            color: #555;
+            font-size: 14px;
+            margin: 0 0 15px;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .product-card button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1100px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Products</h1>
+    </header>
+
+    <section class="product-section">
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://picsum.photos/400/300?random=101" alt="Product 1">
+                <div class="product-info">
+                    <h3>Product 1</h3>
+                    <p>High-quality product with excellent features.</p>
+                    <div class="price">$49.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/400/300?random=102" alt="Product 2">
+                <div class="product-info">
+                    <h3>Product 2</h3>
+                    <p>Stylish and reliable product for everyday use.</p>
+                    <div class="price">$59.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/400/300?random=103" alt="Product 3">
+                <div class="product-info">
+                    <h3>Product 3</h3>
+                    <p>Durable and affordable, perfect for anyone.</p>
+                    <div class="price">$39.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/400/300?random=104" alt="Product 4">
+                <div class="product-info">
+                    <h3>Product 4</h3>
+                    <p>Top-rated product with great customer reviews.</p>
+                    <div class="price">$69.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

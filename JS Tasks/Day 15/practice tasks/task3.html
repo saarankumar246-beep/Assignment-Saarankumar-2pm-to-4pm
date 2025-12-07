@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2-Column to 1-Column</title>
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+
+  .box {
+    background-color: #00b4ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Convert to 1 column on smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* 1 column */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box">Column 1</div>
+  <div class="box">Column 2</div>
+</div>
+
+</body>
+</html>

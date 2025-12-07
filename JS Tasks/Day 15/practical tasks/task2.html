@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Services Cards</title>
+    <style>
+        /* ---------------- BASE STYLES ---------------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* ---------------- SERVICES GRID ---------------- */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #008cff;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* ---------------- RESPONSIVE ---------------- */
+        @media (max-width: 1024px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns on tablets */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services {
+                grid-template-columns: 1fr;
+                /* 1 column on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Our Services</h2>
+
+    <div class="services">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Building responsive and modern websites with clean, maintainable code that looks great on any device.</p>
+        </div>
+        <div class="card">
+            <h3>UI/UX Design</h3>
+            <p>Designing intuitive and engaging interfaces to ensure the best user experience for your visitors.</p>
+        </div>
+        <div class="card">
+            <h3>SEO Optimization</h3>
+            <p>Improving website visibility on search engines to drive more traffic and increase conversions.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
