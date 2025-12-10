@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Restaurant Bill Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart Restaurant Bill Calculator</h1>
+
+        <label>Customer Name:</label>
+        <input type="text" id="customerName">
+
+        <label>Customer Age:</label>
+        <input type="number" id="customerAge">
+
+        <label>Meal Price ($):</label>
+        <input type="number" id="mealPrice">
+
+        <label>Tip %:</label>
+        <input type="number" id="tipPercent" value="10">
+
+        <button onclick="calculateBill()">Calculate Bill</button>
+
+        <div class="output" id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

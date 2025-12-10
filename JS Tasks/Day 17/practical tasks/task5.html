@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grading System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Grading System</h1>
+    <p>Enter your marks (0–100) to get your grade:</p>
+
+    <input type="number" id="marksInput" placeholder="Enter marks" min="0" max="100">
+    <button id="gradeBtn">Get Grade</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        const marksInput = document.getElementById("marksInput");
+        const gradeBtn = document.getElementById("gradeBtn");
+        const result = document.getElementById("result");
+
+        gradeBtn.addEventListener("click", () => {
+            const marks = parseFloat(marksInput.value);
+            let grade;
+
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                grade = "Please enter valid marks between 0 and 100!";
+            } else if (marks >= 90) {
+                grade = "A";
+            } else if (marks >= 80) {
+                grade = "B";
+            } else if (marks >= 70) {
+                grade = "C";
+            } else if (marks >= 60) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            result.textContent = "Grade: " + grade;
+            console.log("Marks:", marks, "| Grade:", grade);
+        });
+    </script>
+
+</body>
+
+</html>

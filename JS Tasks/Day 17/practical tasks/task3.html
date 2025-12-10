@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            margin: 5px 0;
+            display: block;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+
+    <p class="message" id="message"></p>
+
+    <script>
+        const loginBtn = document.getElementById("loginBtn");
+        const message = document.getElementById("message");
+
+        // Predefined credentials
+        const correctUsername = "admin";
+        const correctPassword = "1234";
+
+        loginBtn.addEventListener("click", () => {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === correctUsername && password === correctPassword) {
+                message.textContent = "Welcome, " + username + "!";
+                message.style.color = "green";
+                console.log("Login successful");
+            } else {
+                message.textContent = "Invalid username or password!";
+                message.style.color = "red";
+                console.log("Login failed");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

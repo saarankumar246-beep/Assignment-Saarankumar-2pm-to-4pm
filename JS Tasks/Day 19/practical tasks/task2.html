@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .greeting-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #greeting {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="greeting-container">
+        <h2>Greeting System</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br>
+        <button onclick="greetUser()">Greet Me!</button>
+        <div id="greeting"></div>
+    </div>
+
+    <script>
+        function greetUser() {
+            // Get the user's name
+            const name = document.getElementById('name').value.trim();
+
+            // Check if the user entered a name
+            if (name === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            // Display greeting
+            document.getElementById('greeting').innerText = `Hello, ${name}! Welcome!`;
+        }
+    </script>
+</body>
+</html>

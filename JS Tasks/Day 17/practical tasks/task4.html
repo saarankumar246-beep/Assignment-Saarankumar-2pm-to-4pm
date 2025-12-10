@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Day Finder</h1>
+    <p>Enter a number (1–7) to see the weekday:</p>
+
+    <input type="number" id="dayInput" placeholder="1–7" min="1" max="7">
+    <button id="findBtn">Find Day</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        const dayInput = document.getElementById("dayInput");
+        const findBtn = document.getElementById("findBtn");
+        const result = document.getElementById("result");
+
+        findBtn.addEventListener("click", () => {
+            const dayNumber = parseInt(dayInput.value);
+            let dayName;
+
+            switch (dayNumber) {
+                case 1:
+                    dayName = "Sunday";
+                    break;
+                case 2:
+                    dayName = "Monday";
+                    break;
+                case 3:
+                    dayName = "Tuesday";
+                    break;
+                case 4:
+                    dayName = "Wednesday";
+                    break;
+                case 5:
+                    dayName = "Thursday";
+                    break;
+                case 6:
+                    dayName = "Friday";
+                    break;
+                case 7:
+                    dayName = "Saturday";
+                    break;
+                default:
+                    dayName = "Invalid number! Please enter 1–7.";
+            }
+
+            result.textContent = dayName;
+            console.log("Day number entered:", dayNumber, "| Result:", dayName);
+        });
+    </script>
+
+</body>
+
+</html>

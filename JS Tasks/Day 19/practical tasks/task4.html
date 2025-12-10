@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Processing with Callbacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #output {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Array Processing with Callbacks</h2>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const numbers = [1, 2, 3, 4, 5];
+
+        // 1. Double numbers using map
+        const doubled = numbers.map(function(num) {
+            return num * 2;
+        });
+
+        // 2. Print each doubled number using forEach
+        let outputText = "Doubled Numbers using map & forEach: <br>";
+        doubled.forEach(function(num) {
+            outputText += num + " ";
+        });
+
+        // 3. Custom callback to calculate squares
+        function processArray(arr, callback) {
+            let results = [];
+            arr.forEach(function(item) {
+                results.push(callback(item));
+            });
+            return results;
+        }
+
+        // Callback function to calculate square
+        function square(num) {
+            return num * num;
+        }
+
+        const squared = processArray(numbers, square);
+        outputText += "<br><br>Squared Numbers using custom callback: <br>" + squared.join(" ");
+
+        document.getElementById("output").innerHTML = outputText;
+    </script>
+</body>
+</html>

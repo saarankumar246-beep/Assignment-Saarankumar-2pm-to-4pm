@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks to Grade Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .grade-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="grade-container">
+        <h2>Marks to Grade Converter</h2>
+        <input type="number" id="marks" placeholder="Enter your marks (0-100)">
+        <br>
+        <button onclick="showGrade()">Get Grade</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Function to convert marks to grade
+        function calculateGrade(marks) {
+            if (marks < 0 || marks > 100) {
+                return "Invalid marks!";
+            } else if (marks >= 90) {
+                return "A+";
+            } else if (marks >= 80) {
+                return "A";
+            } else if (marks >= 70) {
+                return "B";
+            } else if (marks >= 60) {
+                return "C";
+            } else if (marks >= 50) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+
+        // Function to get user input and display grade
+        function showGrade() {
+            const marks = parseFloat(document.getElementById('marks').value);
+            const grade = calculateGrade(marks);
+            document.getElementById('result').innerText = `Your grade is: ${grade}`;
+        }
+    </script>
+</body>
+</html>

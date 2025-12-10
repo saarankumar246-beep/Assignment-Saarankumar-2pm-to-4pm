@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Initialization with IIFE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .app-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h2>My App</h2>
+        <div id="status">Initializing...</div>
+    </div>
+
+    <script>
+        // IIFE for app initialization
+        (function() {
+            console.log("App is starting...");
+
+            // Startup code here
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerText = "App initialized successfully!";
+
+            // Example: setting default app values
+            const appSettings = {
+                theme: "light",
+                version: "1.0.0",
+                userLoggedIn: false
+            };
+
+            console.log("App Settings:", appSettings);
+        })(); // Immediately invoked
+    </script>
+</body>
+</html>

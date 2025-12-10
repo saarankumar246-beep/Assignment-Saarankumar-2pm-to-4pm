@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Age Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Age Checker</h1>
+    <p>Enter your age to see if you are a Child, Adult, or Senior:</p>
+
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button id="checkBtn">Check Age</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        const ageInput = document.getElementById("ageInput");
+        const checkBtn = document.getElementById("checkBtn");
+        const result = document.getElementById("result");
+
+        checkBtn.addEventListener("click", () => {
+            const age = Number(ageInput.value); // convert input to number
+
+            if (age < 0 || isNaN(age)) {
+                result.textContent = "Please enter a valid age!";
+            } else if (age <= 12) {
+                result.textContent = "You are a Child.";
+            } else if (age <= 59) {
+                result.textContent = "You are an Adult.";
+            } else {
+                result.textContent = "You are a Senior.";
+            }
+
+            console.log("Age entered:", age); // debug
+        });
+    </script>
+
+</body>
+
+</html>
