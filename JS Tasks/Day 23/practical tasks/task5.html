@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            padding: 40px;
+            background-color: lightblue;
+        }
+
+        #child {
+            padding: 30px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        Parent
+        <div id="child">
+            Child
+        </div>
+    </div>
+
+    <script>
+        const parent = document.getElementById("parent");
+        const child = document.getElementById("child");
+
+        parent.addEventListener("click", () => {
+            console.log("Parent clicked (Bubbling)");
+        });
+
+        child.addEventListener("click", () => {
+            console.log("Child clicked (Bubbling)");
+        });
+
+        parent.addEventListener("click", () => {
+            console.log("Parent clicked (Capturing)");
+        }, true);
+
+        child.addEventListener("click", () => {
+            console.log("Child clicked (Capturing)");
+        }, true);
+    </script>
+</body>
+
+</html>

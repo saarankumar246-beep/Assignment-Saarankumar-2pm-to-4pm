@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <label for="">Name:
+            <input type="text" id="name">
+            <small class="error" id="nameError"></small>
+        </label>
+        <label for="">Email:
+            <input type="email" id="email">
+            <small class="error" id="emailError"></small>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("myForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let isValid = true;
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+
+            if (nameInput.value.trim() === "") {
+                nameError.textContent = "Name is Required";
+                isValid = false;
+            }
+
+            if (emailInput.value.trim() === "") {
+                emailError.textContent = "Email is Required";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+            }
+        })
+    </script>
+</body>
+
+</html>

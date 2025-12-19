@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        .preview {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Live Form Preview</h2>
+    <label for="">Name: <input type="text" id="nameInput"></label>
+    <label for="">Email: <input type="email" id="emailInput"></label>
+
+    <div class="preview">
+        <h2>Preview</h2>
+
+        <p>Name: <span id="namePreview"></span></p>
+        <p>email: <span id="emailPreview"></span></p>
+    </div>
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+        const emailInput = document.getElementById("emailInput");
+
+        const namePreview = document.getElementById("namePreview");
+        const emailPreview = document.getElementById("emailPreview");
+
+        nameInput.addEventListener("input", () => {
+            namePreview.textContent = nameInput.value;
+        })
+
+        emailInput.addEventListener("input", () => {
+            emailPreview.textContent = emailInput.value;
+        })
+
+        nameInput.addEventListener("change", () => {
+            console.log("Name finalized:", nameInput.value);
+        });
+
+        emailInput.addEventListener("change", () => {
+            console.log("Email finalized:", emailInput.value);
+        });
+    </script>
+</body>
+
+</html>

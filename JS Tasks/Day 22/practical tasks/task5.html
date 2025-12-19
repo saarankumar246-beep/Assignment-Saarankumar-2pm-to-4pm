@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatted Text Inserter</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Formatted Text Inserter</h1>
+
+    <input type="text" id="textInput" placeholder="Type something...">
+    <select id="formatSelect">
+        <option value="none">Normal</option>
+        <option value="bold">Bold</option>
+        <option value="italic">Italic</option>
+        <option value="bold-italic">Bold & Italic</option>
+    </select>
+    <button id="insertBtn">Insert</button>
+
+    <div id="displayArea" style="margin-top:20px; font-size:18px;"></div>
+
+    <script>
+        const input = document.getElementById('textInput');
+        const select = document.getElementById('formatSelect');
+        const button = document.getElementById('insertBtn');
+        const display = document.getElementById('displayArea');
+
+        button.addEventListener('click', () => {
+            let text = input.value.trim();
+            if (text === "") return;
+
+            let formattedText;
+
+            switch (select.value) {
+                case 'bold':
+                    formattedText = `<b>${text}</b>`;
+                    break;
+                case 'italic':
+                    formattedText = `<i>${text}</i>`;
+                    break;
+                case 'bold-italic':
+                    formattedText = `<b><i>${text}</i></b>`;
+                    break;
+                default:
+                    formattedText = text;
+            }
+
+            display.innerHTML = formattedText;
+        });
+    </script>
+
+</body>
+
+</html>
