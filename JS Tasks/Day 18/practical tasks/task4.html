@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Student Marksheet</h2>
+
+    <input type="number" id="marksInput" placeholder="Enter marks (0–100)">
+    <button onclick="checkResult()">Check Result</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkResult() {
+            let marks = document.getElementById("marksInput").value;
+            let result = document.getElementById("result");
+            let grade, remarks;
+
+            if (marks >= 90 && marks <= 100) {
+                grade = "A+";
+                remarks = "Outstanding";
+            } else if (marks >= 80) {
+                grade = "A";
+                remarks = "Excellent";
+            } else if (marks >= 70) {
+                grade = "B";
+                remarks = "Very Good";
+            } else if (marks >= 60) {
+                grade = "C";
+                remarks = "Good";
+            } else if (marks >= 50) {
+                grade = "D";
+                remarks = "Average";
+            } else if (marks >= 0) {
+                grade = "F";
+                remarks = "Fail";
+            } else {
+                grade = "Invalid";
+                remarks = "Invalid marks";
+            }
+
+            result.textContent = `Grade: ${grade} | Remarks: ${remarks}`;
+        }
+    </script>
+
+</body>
+
+</html>

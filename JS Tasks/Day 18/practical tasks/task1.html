@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Age Category Program</h2>
+
+    <input type="number" id="ageInput" placeholder="Enter age">
+    <button onclick="checkAge()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAge() {
+            let age = document.getElementById("ageInput").value;
+            let result = document.getElementById("result");
+
+            if (age >= 0 && age <= 12) {
+                result.textContent = "Child";
+            } else if (age >= 13 && age <= 19) {
+                result.textContent = "Teen";
+            } else if (age >= 20 && age <= 59) {
+                result.textContent = "Adult";
+            } else if (age >= 60) {
+                result.textContent = "Senior";
+            } else {
+                result.textContent = "Invalid age";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
