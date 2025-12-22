@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Remove First Item</title>
+</head>
+
+<body>
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button id="removeButton">Remove First Item</button>
+
+    <script>
+        const list = document.getElementById("myList");
+        const button = document.getElementById("removeButton");
+
+        button.addEventListener("click", function () {
+            if (list.firstChild) { // Check if list has at least one item
+                list.removeChild(list.firstChild);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

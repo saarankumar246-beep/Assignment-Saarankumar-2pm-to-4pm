@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Paragraph Color</title>
+</head>
+
+<body>
+
+    <p id="myPara">This is a paragraph.</p>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        // Select the paragraph and button using querySelector
+        const paragraph = document.querySelector("#myPara");
+        const button = document.querySelector("#colorButton");
+
+        // Add click event to change color
+        button.addEventListener("click", function () {
+            paragraph.style.color = "blue"; // Change the color
+        });
+    </script>
+
+</body>
+
+</html>

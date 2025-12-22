@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Heading</title>
+</head>
+
+<body>
+
+    <h1 id="myHeading">Original Heading</h1>
+    <button id="myButton">Change Heading</button>
+
+    <script>
+        // Get the button and heading elements
+        let button = document.getElementById("myButton");
+        let heading = document.getElementById("myHeading");
+
+        // Add click event to the button
+        button.addEventListener("click", function () {
+            heading.textContent = "Heading Changed!";
+        });
+    </script>
+
+</body>
+
+</html>
