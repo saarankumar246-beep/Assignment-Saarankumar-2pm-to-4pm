@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <button onclick="validateForm()">Submit</button>
+
+    <script>
+        function validateForm() {
+            try {
+                let name = document.getElementById("name").value.trim();
+
+                if (name === "") {
+                    throw new Error("Name field cannot be empty");
+                }
+
+                alert("Form submitted successfully!");
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+</body>
+
+</html>

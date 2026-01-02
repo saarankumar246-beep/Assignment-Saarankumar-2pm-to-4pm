@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Data App</title>
+</head>
+<body>
+
+  <h2>User List</h2>
+
+  <!-- Loading text (BONUS) -->
+  <p id="loading">Loading data...</p>
+
+  <!-- Saved data -->
+  <p id="saved"></p>
+
+  <!-- Display fetched data -->
+  <ul id="userList"></ul>
+
+  <script>
+    const loadingText = document.getElementById("loading");
+    const userList = document.getElementById("userList");
+    const savedText = document.getElementById("saved");
+
+    // 1. Retrieve saved data on reload
+    const savedUser = localStorage.getItem("savedUser");
+    if (savedUser) {
+      const userObj = JSON.parse(savedUser);
+      savedText.textContent = "Saved User: " + userObj.name;
+    }
+
+    // 2. Fetch data from public API
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(users => {
+        loadingText.textContent = ""; // remove loading
+
+        // 3. Display results using DOM
+        users.forEach(user => {
+          const li = document.createElement("li");
+          li.textContent = user.name + " (" + user.email + ")";
+          userList.appendChild(li);
+        });
+
+        // 4. Save one value in localStorage
+        const firstUser = {
+          name: users[0].name,
+          email: users[0].email
+        };
+
+        // 5. Convert object to JSON
+        localStorage.setItem(
+          "savedUser",
+          JSON.stringify(firstUser)
+        );
+      })
+
+      // 6. Handle errors
+      .catch(error => {
+        loadingText.textContent = "Failed to load data.";
+        console.log("Error:", error);
+      });
+  </script>
+
+</body>
+</html>
